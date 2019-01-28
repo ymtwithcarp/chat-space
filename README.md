@@ -38,32 +38,32 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|member_id|integer|null: false, foreign_key: true|
-|name|string|null: false, foreign_key: true|
-|password|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|password|integer|null: false|
+
 
 ### Association
 - has_many :messages
 - has_many :members
+- has_many :groups, through: :members
+
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|member_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
-|name|string|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
-- had_many members
-- has_many messages
+- had_many :members
+- has_many :messages
+- has_many :users, through: :members
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|text|text|null: false, foreign_key: true|
+|text|text|null: false|
 
 ### Association
 - belongs_to :group
