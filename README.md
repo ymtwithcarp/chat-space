@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 
-## membersテーブル
+## users_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -45,18 +45,18 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :members
-- has_many :groups, through: :members
+- has_many :groups, through: :users_groups
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index :true|
 
 ### Association
 - had_many :members
 - has_many :messages
-- has_many :users, through: :members
+- has_many :users, through: :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
