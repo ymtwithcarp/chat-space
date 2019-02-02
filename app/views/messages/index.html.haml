@@ -8,8 +8,11 @@
       .side-bar__user
         .side-bar__user__box
           %p.side-bar__user__box_name seo
-          %i.fa.fa-cog
-          %i.fa.fa-edit
+          %a.side-bar__user__box_cog{href: '#'}
+            %span.fa.fa-cog
+          %a.side-bar__user__box_edit{href: '#'}
+            %span.fa.fa-edit
+
       .side-bar__user-messages
         %p.side-bar__user-messages_group-name サンプル
         %p.side-bar__user-messages_my-messages まだメッセージはありません
@@ -34,6 +37,7 @@
       %footer
         .footer
           %form.footer__form
-            %i.fa.fa-image
+            %a.form.footer__form_image{href: "#"}
+              %span.fa.fa-image
             %input.footer__form__text-box{:type => "text", :value => "type a message"}
             %input.footer__form__send-btn{:type => "submit", :value => "Send"}
