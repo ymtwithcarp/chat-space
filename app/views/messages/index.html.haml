@@ -1,0 +1,43 @@
+%header
+  .header
+    %p チャットグループが作成されました。
+
+.contents
+
+  .side-bar
+    .side-bar__user
+      .side-bar__user__box
+        %p.side-bar__user__box_name seo
+        %a.side-bar__user__box_cog{href: '#'}
+          %span.fa.fa-cog
+        %a.side-bar__user__box_edit{href: '#'}
+          %span.fa.fa-edit
+
+      .side-bar__user-messages
+        %p.side-bar__user-messages_group-name サンプル
+        %p.side-bar__user-messages_my-messages まだメッセージはありません
+
+  .main
+    .main__top
+      %a.main__top_edit-btn{href: '#'} Edit
+      %p.main__top_group-name sample
+      %br
+      %p.mein__top_group-members Members: seo neko
+    .main__contents
+      .main__contents__messages
+        .main__contents__messages__part
+          %p.main__contents__messages__part_name seo
+          %p.main__contents__messages__part_date 2018/09/21 06:16:55
+          %p.main__contents__messages__part_message Hello world!
+        .main__contents__messages__part
+          %p.main__contents__messages__part_name neko
+          %p.main__contents__messages__part_date 2018/09/21 06:16:55
+          %p.main__contents__messages__part_message Good bye world!
+
+  %footer
+    .footer
+      %form.footer__form
+        %a.form.footer__form_image{href: "#"}
+          %span.fa.fa-image
+        %input.footer__form__text-box{:type => "text", :value => "type a message"}
+        %input.footer__form__send-btn{:type => "submit", :value => "Send"}
