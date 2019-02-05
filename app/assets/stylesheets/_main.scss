@@ -3,62 +3,99 @@
 	width: calc(100% - 300px);
 	height: 100vh;
 		&__top {
-		padding: 0 40px;
-		height: 150px;
-			&_group-name {
-			font-size: 20px;
-			color: #333333;
-			display: inline-block;
-			margin: 35px 0 15px;
-			clear: both;
-			}
-			&_group-members{
-			font-size: 12px;
-			color: #999999;
-			}
-			&_edit-btn {
-			display: inline-block;
-			height: 40px;
-			padding: 0px 20px;
-			position: absolute;
-			right: 40px;
-			margin-top: 28px;
-			color: $blue;
-			border-color: $blue;
-			border: solid;
-			text-decoration: none;
-			line-height: 40px;
-			}
+			padding: 0 40px;
+			height: 100px;
+				&_group-name {
+					font-size: 20px;
+					color: #333333;
+					display: inline-block;
+					margin: 35px 0 15px;
+					clear: both;
+				}
+				&_group-members{
+					font-size: 12px;
+					color: #999999;
+				}
+				&_edit-btn {
+					display: inline-block;
+					height: 40px;
+					padding: 0px 20px;
+					position: absolute;
+					right: 40px;
+					margin-top: 28px;
+					color: $blue;
+					border-color: $blue;
+					border: solid;
+					text-decoration: none;
+					line-height: 40px;
+				}
 		}
 
-	&__contents {
-	background-color: #aaaaaa;
-	padding: 0 40px;
-	border-top: solid #eeeeee;
-	height: calc(100vh - 150px - 90px);
-		&__messages {
-		font-size: 12px;
-		color: #999999;
-			&__part {
-			margin: 40px 0;
-				&_name {
-				font-size: 16px;
-				font-weight: bold;
-				color: #434a54;
-				margin-right: 10px;
-				display: inline-block;
-				margin: 0 auto;
+		&__contents {
+			background-color: #aaaaaa;
+			padding: 0 40px;
+			border-top: solid #eeeeee;
+			height: calc(100vh - 100px - 90px);
+				&__messages {
+					font-size: 12px;
+					color: #999999;
+					&__part {
+						margin: 40px 0;
+						&_name {
+							font-size: 16px;
+							font-weight: bold;
+							color: #434a54;
+							margin-right: 10px;
+							display: inline-block;
+							margin: 0 auto;
+						}
+						&_message {
+							font-size: 14px;
+							color: #434a54;
+							margin-top: 10px;
+						}
+						&_date {
+							font-size: 12px;
+							color: #999999;
+						}
+					}
 				}
-				&_message {
-				font-size: 14px;
-				color: #434a54;
-				margin-top: 10px;
-				}
-				&_date {
-				font-size: 12px;
-				color: #999999;
-				}
-			}
 		}
-	}
+
+		&__footer__form {
+			height: 90px;
+			padding: 20px 40px;
+			background-color: #bebebf;
+			width: 100%;
+			box-sizing: border-box;
+				&__text-box {
+					height: 50px;
+					padding: 0 10px;
+					width: calc(100% - 530px);
+					box-sizing: border-box;
+					color: #434A54;
+					font-size: 16px;
+					position: absolute;
+				}
+
+				& .fa.fa-image{
+					position: absolute;
+					bottom: 10px;
+					right: 200px;
+				}
+				&__text-box_image{
+					position: relative;
+					left: 550px;
+					display: none;
+				}
+				&__send-btn {
+					display: inline-block;
+					height: 50px;
+					background-color: $blue;
+					color: $white;
+					margin-left: 15px;
+					width: 90px;
+					float: right;
+				}
+		}
 }
