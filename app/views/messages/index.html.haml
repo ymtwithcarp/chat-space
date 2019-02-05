@@ -33,9 +33,14 @@
         %p.main__contents__messages__part_date 2018/09/21 06:16:55
         %p.main__contents__messages__part_message Good bye world!
   .main__footer
-    %form.main__footer__form
-      %input.main__footer__form__text-box{:type => "text", :value => "type a message"}
-      %label{for: "image"}
-        %input.main__footer__form__text-box_image{:type => "file", id: "image"}
+    / %form.main__footer__form
+    -form_for @message do |f|, class: "main__footer__form"
+      =f.text_field, class: "main__footer__form__text-box"
+      / input.main__footer__form__text-box{:type => "text", :value => "type a message"}
+      =f.label
+      / %label{for: "image"}
+        / %input.main__footer__form__text-box_image{:type => "file", id: "image"}
+        =f.file_field, class: "main__footer__form__text-box_image", id: ""
         %i.fa.fa-image
-      %input.main__footer__form__send-btn{:type => "submit", :value => "Send"}
+      / %input.main__footer__form__send-btn{:type => "submit", :value => "Send"}
+      =f.submit,
