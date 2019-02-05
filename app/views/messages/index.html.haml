@@ -24,17 +24,9 @@
     %a.main__top_edit-btn{href: '#'} Edit
     %p.main__top_group-name sample
     %br
-    %p.mein__top_group-members Members: seo neko
-  .main__contents
-    .main__contents__messages
-      .main__contents__messages__part
-        %p.main__contents__messages__part_name seo
-        %p.main__contents__messages__part_date 2018/09/21 06:16:55
-        %p.main__contents__messages__part_message Hello world!
-      .main__contents__messages__part
-        %p.main__contents__messages__part_name neko
-        %p.main__contents__messages__part_date 2018/09/21 06:16:55
-        %p.main__contents__messages__part_message Good bye world!
+    %p.mein__top_group-members Members:
+  .messages
+    = render @messages
   .main__footer
   .form
       = form_for [@group, @message] do |f|
