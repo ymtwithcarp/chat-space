@@ -1,10 +1,16 @@
 @import "font-awesome";
 @import "colors";
+@import "font_size";
 @import "_reset";
+// @import "modules/chat";
 @import "_header";
-@import "_sidebar";
+@import "modules/side_bar";
 @import "_main";
-@import "_footer";
+@import "_user";
+@import "flash";
+@import "_group";
 
-
+* {
+	box-sizing: border-box;
+}
 
