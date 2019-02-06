@@ -1,39 +1,30 @@
 %header
-  .header
-    %p チャットグループが作成されました。
-      .header__errors
-      -unless message = Message.create(messsage_params)
-      flash[:error] = "メッセージを入力してください"
+/ -flash.each do |key, value|
+/ =content_tag :div, value, class: key
 
 
 .side-bar
-  .side-bar__user
-    .side-bar__user__box
-      %p.side-bar__user__box_name seo
-      %a.side-bar__user__box_cog{href: '#'}
-        %span.fa.fa-cog
-      %a.side-bar__user__box_edit{href: '#'}
-        %span.fa.fa-edit
+= render "devise/shared/side_bar"
 
-  .side-bar__user-messages
-    %p.side-bar__user-messages_group-name サンプル
-    %p.side-bar__user-messages_my-messages まだメッセージはありません
-
-.main
-  .main__top
-    %a.main__top_edit-btn{href: '#'} Edit
-    %p.main__top_group-name sample
-    %br
-    %p.mein__top_group-members Members:
+.chat
+  .header
+    .left-header
+      %p.left-header__title
+      =@group.name
+      %br
+      %p.left-header__members Members:
+      -@group.users.each do |user|
+        .left-header__members__member
+        =user.name
+    .right-header
+      %a.right-header__btn Edit
   .messages
     = render @messages
-  .main__footer
   .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
-
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
