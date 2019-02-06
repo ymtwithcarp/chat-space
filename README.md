@@ -36,7 +36,7 @@
 |------|----|-------|
 |user_id|references|foreign_key: true|
 |group_id|references|foreign_key: true|
-|content|striong|
+|content|string|
 |image|string|
 
 ### Association
