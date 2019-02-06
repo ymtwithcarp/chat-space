@@ -13,7 +13,8 @@
       =@group.name
       %br
       %p.left-header__members Members:
-      =render partial: "messages/user", locals: {users: @group.users}
+      -@group.users.each do |user|
+        =render partial: "messages/user", locals: {user: user}
     .right-header
       %a.right-header__btn Edit
   .messages
