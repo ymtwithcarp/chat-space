@@ -34,9 +34,10 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|group_id|references|foreign_key: true|
-|content|string|
+
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|content|text|
 |image|string|
 
 ### Association
