@@ -1,41 +1,24 @@
 %header
-  .header
-    %p チャットグループが作成されました。
-
-
 .side-bar
-  .side-bar__user
-    .side-bar__user__box
-      %p.side-bar__user__box_name seo
-      %a.side-bar__user__box_cog{href: '#'}
-        %span.fa.fa-cog
-      %a.side-bar__user__box_edit{href: '#'}
-        %span.fa.fa-edit
+= render "devise/shared/side_bar"
 
-  .side-bar__user-messages
-    %p.side-bar__user-messages_group-name サンプル
-    %p.side-bar__user-messages_my-messages まだメッセージはありません
-
-.main
-  .main__top
-    %a.main__top_edit-btn{href: '#'} Edit
-    %p.main__top_group-name sample
-    %br
-    %p.mein__top_group-members Members: seo neko
-  .main__contents
-    .main__contents__messages
-      .main__contents__messages__part
-        %p.main__contents__messages__part_name seo
-        %p.main__contents__messages__part_date 2018/09/21 06:16:55
-        %p.main__contents__messages__part_message Hello world!
-      .main__contents__messages__part
-        %p.main__contents__messages__part_name neko
-        %p.main__contents__messages__part_date 2018/09/21 06:16:55
-        %p.main__contents__messages__part_message Good bye world!
-  .main__footer
-    %form.main__footer__form
-      %input.main__footer__form__text-box{:type => "text", :value => "type a message"}
-      %label{for: "image"}
-        %input.main__footer__form__text-box_image{:type => "file", id: "image"}
-        %i.fa.fa-image
-      %input.main__footer__form__send-btn{:type => "submit", :value => "Send"}
+.chat
+  .header
+    .left-header
+      %p.left-header__title
+      =@group.name
+      %br
+      %p.left-header__members Members:
+      =render partial: "messages/user", collection: @group.users
+    .right-header
+      %a.right-header__btn Edit
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
