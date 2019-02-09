@@ -70,6 +70,8 @@ gem "devise"
 
 gem 'haml-rails'
 gem 'erb2haml'
-gem 'rails-i18n'
 
-gem 'rubocop-rspec'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
