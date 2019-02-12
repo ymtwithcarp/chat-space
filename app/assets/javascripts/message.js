@@ -1,6 +1,6 @@
 $(function(){
 
-  function textField(message){
+  function createMessage(message){
     var html =
       `<div class="message firstshow">
         <div class="upper-message">
@@ -12,7 +12,7 @@ $(function(){
           </div>
         </div>
         <div class="lower-meesage">
-          <img src="${message.image? message.image : ""}">
+          <img src="${message.image ? message.image : ""}">
           <p class="lower-message__content">
             ${message.content}
           </p>
@@ -34,7 +34,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      var html = textField(data);
+      var html = createMessage(data);
       $(".messages").append(html)
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       var formElement = document.getElementById('form');
