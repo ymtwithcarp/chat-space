@@ -43,6 +43,11 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'rails-i18n'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -53,6 +58,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :test do
 
