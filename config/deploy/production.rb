@@ -6,7 +6,8 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server '13.114.243.164', user: 'ec2-user' 'ymtwithcarp', roles: %w{app db web}
+server '13.114.243.164', user: 'ec2-user', roles: %w{app db web}
+server '13.114.243.164', user: 'ymtwithcarp', roles: %w{app db web}
 
 
 
@@ -61,3 +62,12 @@ server '13.114.243.164', user: 'ec2-user' 'ymtwithcarp', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
