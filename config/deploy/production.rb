@@ -44,7 +44,7 @@ server '13.114.243.164', user: 'ec2-user', roles: %w{app db web}
 # Global options
 # --------------
  set :ssh_options, {
-   keys: [File.expand_path('~/.ssh/kkcymtcs.pem')]
+   keys: [File.expand_path('~/.ssh/kkcymtcs.pem)')]
 #    forward_agent: false,
 #    auth_methods: %w(password)
  }
@@ -61,12 +61,3 @@ server '13.114.243.164', user: 'ec2-user', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-
-# .bash_profile
-
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-fi
-
-# User specific environment and startup programs
