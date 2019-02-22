@@ -11,7 +11,7 @@
       %p.left-header__members Members:
       = render partial: "messages/user", collection: @group.users
     .right-header
-      %a.right-header__btn Edit
+      %a.right-header__btn{href: "edit"} Edit
   .messages
     = render @messages
   .form
