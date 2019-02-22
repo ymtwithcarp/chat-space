@@ -8,7 +8,7 @@ $(function(){
       <p class="chat-group-user__name">${user.name}</p>
       <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
     </div>`
-    search_list.append(html);
+      search_list.append(html);
   }
 
   function appendNoUser(user){
@@ -43,7 +43,10 @@ $(function(){
     .done(function(users){
       if (users.length !== 0 ) {
         users.forEach(function(user){
-          appendUser(user);
+          name = $('.current_user_name').val();
+          if(user.name !== name){
+            appendUser(user);
+          }
         })
       }
       else {

@@ -15,6 +15,7 @@
       = f.label :users, "チャットメンバーを追加", class: "chat-group-form__label"
     .chat-group-form__field--right
       = f.text_field :users, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください', value: ""
+      %input{name: "current_user_name", type: "hidden", value: current_user.name, class: 'current_user_name' }
       .chat-group-form__search.clearfix
         #user-search-result
   .chat-group-form__field.clearfix
