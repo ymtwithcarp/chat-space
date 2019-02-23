@@ -79,7 +79,8 @@ gem "devise"
 
 gem 'haml-rails'
 gem 'erb2haml'
-
+/home/ec2-user/.bash_profile.s
+wp
 
 gem 'carrierwave'
 gem 'mini_magick'
